@@ -1,0 +1,1 @@
+Simple WordPress Ajax Working Example, following best practices by Tom McFarlin.

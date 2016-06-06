@@ -10,7 +10,7 @@
  
             url:    gens_demo.ajax_url,
             method: 'GET',
-            data:   { action: 'get_current_user_info' }
+            data:   { postNonce': gens_demo.postNonce, action: 'get_current_user_info' }
  
         }).done(function( response ) {
  

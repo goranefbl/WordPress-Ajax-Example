@@ -23,7 +23,8 @@ function gens_add_ajax_support() {
     wp_enqueue_script( 'ajax-script', plugin_dir_url( __FILE__ ) . 'frontend.js', array( 'jquery' ));
     wp_localize_script('ajax-script','gens_demo',
         array(
-            'ajaxurl' => admin_url( 'admin-ajax.php' )
+            'ajaxurl' => admin_url( 'admin-ajax.php' ),
+            'postNonce' => wp_create_nonce( 'myajax-post-nonce' )
         )
     );
      

@@ -42,7 +42,10 @@ add_action( 'wp_ajax_nopriv_get_current_user_info', 'gens_get_current_user_info'
  * @since    1.0.0
  */
 function gens_get_current_user_info() {
-
+    $nonce = $_POST['postNonce'];
+	if ( ! wp_verify_nonce( $nonce, 'myajax-post-nonce' ) ) {
+		die ( 'Busted!');
+	}
  	// Grab the current user's ID
     $user_id = get_current_user_id();
  
